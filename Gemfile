@@ -24,10 +24,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'mongoid', '~> 5.1.0'
-
-gem 'bson_ext'
-
 gem "haml-rails", "~> 0.9"
 
 gem 'foundation-rails'
