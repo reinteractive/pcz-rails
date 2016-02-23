@@ -41,8 +41,6 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bower-rails (0.10.0)
-    bson (4.0.2)
-    bson_ext (1.5.1)
     builder (3.2.2)
     byebug (8.2.2)
     capybara (2.6.2)
@@ -109,17 +107,9 @@ GEM
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    mongo (2.2.3)
-      bson (~> 4.0)
-    mongoid (5.1.1)
-      activemodel (~> 4.0)
-      mongo (~> 2.1)
-      origin (~> 2.2)
-      tzinfo (>= 0.3.37)
     multi_json (1.11.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
-    origin (2.2.0)
     pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -224,7 +214,6 @@ PLATFORMS
 
 DEPENDENCIES
   bower-rails
-  bson_ext
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -235,7 +224,6 @@ DEPENDENCIES
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
-  mongoid (~> 5.1.0)
   pg
   rails (= 4.2.3)
   rails_12factor
