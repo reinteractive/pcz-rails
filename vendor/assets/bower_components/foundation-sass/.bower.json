@@ -1,0 +1,22 @@
+{
+  "name": "foundation-sass",
+  "version": "5.5.2",
+  "main": [
+    "scss/normalize.scss",
+    "scss/foundation.scss"
+  ],
+  "ignore": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "private": false,
+  "homepage": "https://github.com/micjamking/foundation-sass",
+  "_release": "5.5.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "5.5.2",
+    "commit": "a6ea54986a3c7ab89aa213fd8a072036af5eaba2"
+  },
+  "_source": "git://github.com/micjamking/foundation-sass.git",
+  "_target": "*",
+  "_originalSource": "foundation-sass"
+}

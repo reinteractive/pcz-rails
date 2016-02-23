@@ -1,0 +1,12 @@
+{
+  "name": "foundation-sass",
+  "version": "5.5.2",
+  "main": [
+    "scss/normalize.scss",
+    "scss/foundation.scss"
+  ],
+  "ignore": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "private": false
+}
