@@ -1,6 +1,13 @@
 = flash[:notice]
 
-%h1 Listing players
+%h2 Listing players
+
+.row
+  =form_tag players_path, :method=>'get' do
+    .medium-8-columns
+      = text_field_tag :search, params[:search]
+      = submit_tag "Search", :name =>nil
+
 
 %table
   %thead
@@ -24,8 +31,8 @@
         %td= player.name
         %td= player.rating
         %td= player.k
-        %td= player.rapid
-        %td= player.blitz
+        %td= player.rapid unless player.rapid <= 0
+        %td= player.blitz unless player.blitz <= 0
         %td= player.birthday
         %td= player.flag
         %td= link_to 'Show', player

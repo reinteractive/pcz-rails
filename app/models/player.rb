@@ -15,4 +15,15 @@ class Player < ActiveRecord::Base
     end # end CSV.foreach
   end # end self.import(file)
 
+
+=begin
+  def self.search(search)
+  	  if search
+      where('name LIKE ?',"%#{search}%")
+    else
+      all
+    end
+=end
+
+  	
 end
