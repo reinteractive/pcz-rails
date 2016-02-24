@@ -1,0 +1,42 @@
+= flash[:notice]
+
+%h1 Listing players
+
+%table
+  %thead
+    %tr
+      %th Fideid
+      %th Name
+      %th Rating
+      %th K
+      %th Rapid
+      %th Blitz
+      %th Birthday
+      %th Flag
+      %th
+      %th
+      %th
+
+  %tbody
+    - @players.each do |player|
+      %tr
+        %td= player.fideid
+        %td= player.name
+        %td= player.rating
+        %td= player.k
+        %td= player.rapid
+        %td= player.blitz
+        %td= player.birthday
+        %td= player.flag
+        %td= link_to 'Show', player
+        %td= link_to 'Edit', edit_player_path(player)
+        %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Player', new_player_path
+
+%h3 Import a CSV File
+= form_tag import_players_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag "Import CSV"
