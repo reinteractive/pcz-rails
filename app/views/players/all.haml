@@ -1,7 +1,5 @@
-= flash[:notice]
-
 .row
-  =form_tag players_path, :method=>'get' do
+  =form_tag all_players_path, :method=>'get' do
     .medium-5.columns
       = text_field_tag :search, params[:search]
     .medium-1.columns.end.float-right
@@ -38,13 +36,3 @@
           %td= link_to 'Edit', edit_player_path(player)
           %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
   = paginate @players
-
-%br
-
-= link_to 'New Player', new_player_path
-= link_to 'Girls', girls_players_path
-.row
-  %h4 Import a CSV File
-  = form_tag import_players_path, multipart: true do
-    = file_field_tag :file
-    = button_tag "Import CSV"
