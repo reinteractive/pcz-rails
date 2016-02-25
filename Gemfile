@@ -4,8 +4,14 @@ ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
-
+#postgres database because its compatible with heroku deployment
 gem 'pg'
+#kaminari for pagination
+gem 'kaminari'
+#paperclip to attach media to posts
+gem "paperclip", "~> 4.3"
+#authentication with devise
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
