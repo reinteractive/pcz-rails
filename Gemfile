@@ -13,7 +13,9 @@ gem "paperclip", "~> 4.3"
 #authentication with devise
 gem 'devise'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'therubyracer'
+gem 'less-rails-semantic_ui'
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -32,9 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "haml-rails", "~> 0.9"
 
-gem 'foundation-rails'
 
-gem 'bower-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem "foreman"
