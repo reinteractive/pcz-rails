@@ -1,50 +1,59 @@
 = flash[:notice]
 
-.row
-  =form_tag players_path, :method=>'get' do
-    .medium-5.columns
-      = text_field_tag :search, params[:search]
-    .medium-1.columns.end.float-right
-      = submit_tag "Search", :name =>nil, class: 'round button tiny' 
+.ui.segments
+  .ui.segment
+    .blue.ui.buttons
+      = link_to "Active Players", players_path, class:'ui button'
+      = link_to "Women", women_players_path, class:'ui blue basic button'
+      = link_to "Juniors", juniors_players_path, class:'ui blue basic button'
+      = link_to "Girls", girls_players_path, class:'ui blue basic button'
+      = link_to "All Players", all_players_path, class:'ui blue basic button'
 
-.row
-  %table.hover
-    %thead
-      %tr
-        %th Fideid
-        %th Name
-        %th Rating
-        %th K
-        %th Rapid
-        %th Blitz
-        %th Birthday
-        %th Flag
-        %th
-        %th
-        %th
+  .ui.segment
+    =form_tag players_path, class:'ui form', :method=>'get' do
+      .field.ui.left.icon.input
+        = text_field_tag :search, params[:search]
+        %i.search.icon
+        = button_tag "Search", type:'submit', :name =>nil, class: 'ui green button' 
 
-    %tbody
-      - @players.each do |player|
+  .ui.segment
+    %table.ui.celled.table
+      %thead
         %tr
-          %td= player.fideid
-          %td= player.name
-          %td= player.rating
-          %td= player.k
-          %td= player.rapid unless player.rapid <= 0
-          %td= player.blitz unless player.blitz <= 0
-          %td= player.birthday
-          %td= player.flag
-          %td= link_to 'Show', player
-          %td= link_to 'Edit', edit_player_path(player)
-          %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
-  = paginate @players
+          %th Fideid
+          %th Name
+          %th Rating
+          %th K
+          %th Rapid
+          %th Blitz
+          %th Birthday
+          %th Flag
+          %th
+          %th
+          %th
 
-%br
+      %tbody
+        - @players.each do |player|
+          %tr
+            %td= player.fideid
+            %td= player.name
+            %td= player.rating
+            %td= player.k
+            %td= player.rapid unless player.rapid <= 0
+            %td= player.blitz unless player.blitz <= 0
+            %td= player.birthday
+            %td= player.flag
+            %td= link_to 'Show', player
+            %td= link_to 'Edit', edit_player_path(player)
+            %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    = paginate @players
 
-= link_to 'New Player', new_player_path
-= link_to 'Girls', girls_players_path
-.row
-  %h4 Import a CSV File
-  = form_tag import_players_path, multipart: true do
-    = file_field_tag :file
-    = button_tag "Import CSV"
+  %br
+
+  = link_to 'New Player', new_player_path
+
+  .ui.segment
+    %h4 Import a CSV File
+    = form_tag import_players_path, multipart: true do
+      = file_field_tag :file
+      = button_tag "Import CSV", type:'submit', class:'ui button'
