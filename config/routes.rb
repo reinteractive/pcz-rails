@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :posts
   resources :players do
     collection do
       post :import

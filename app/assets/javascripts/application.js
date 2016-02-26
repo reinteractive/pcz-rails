@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require angular
+//= require ckeditor/init
 //= require_tree .
+//= require semantic_ui/semantic_ui

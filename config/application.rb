@@ -21,12 +21,7 @@ module PczRails
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components")
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components","foundation_icons","foundation_icons_accessibility","fonts")
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components","foundation_icons","foundation_icons_general","fonts")
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components","foundation_icons","foundation_icons_general_enclosed","fonts")
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components","foundation_icons","foundation_icons_social","fonts")
-    config.assets.precompile << %r(.*.(?:eot|svg|ttf|woff|woff2)$)
   end
 end

@@ -11,6 +11,7 @@ gem 'kaminari'
 #paperclip to attach media to posts
 gem "paperclip", "~> 4.3"
 #authentication with devise
+gem 'ckeditor'
 gem 'devise'
 # Use SCSS for stylesheets
 gem 'therubyracer'
