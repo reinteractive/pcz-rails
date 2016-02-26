@@ -1,0 +1,15 @@
+.ui.container
+  %h1 Listing posts
+
+  .ui.segment
+  - @posts.each do |post|
+    = image_tag post.image.url(:medium)
+    = post.title
+    = post.content.html_safe
+    = link_to 'Show', post
+    = link_to 'Edit', edit_post_path(post)
+    = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+  .ui.segment
+  = link_to 'New Post', new_post_path
