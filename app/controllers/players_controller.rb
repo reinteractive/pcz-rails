@@ -5,7 +5,8 @@ class PlayersController < ApplicationController
   # GET /players.json
   def index
     if params[:search]
-      @players = Player.where("flag !='i' AND name LIKE ?","%#{params[:search]}%").page params[:page]
+      searchstring = params[:search].capitalize
+      @players = Player.where("flag !='i' AND name LIKE ?","%#{searchstring}%").page params[:page]
     else
       @players = Player.where("flag !='i'").page params[:page]
     end
@@ -18,7 +19,8 @@ class PlayersController < ApplicationController
 
   def girls
     if params[:search]
-      @players = Player.where("sex = 'F' AND birthday>=1995 AND name LIKE ?","%#{params[:search]}%").page params[:page]
+      searchstring = params[:search].capitalize
+      @players = Player.where("sex = 'F' AND birthday>=1995 AND name LIKE ?","%#{searchstring}%").page params[:page]
     else
       @players = Player.where("sex = 'F' AND birthday>=1995").page params[:page]
     end
@@ -26,7 +28,8 @@ class PlayersController < ApplicationController
 
   def women
     if params[:search]
-      @players = Player.where("sex = 'F' AND name LIKE ?","%#{params[:search]}%").page params[:page]
+      searchstring = params[:search].capitalize
+      @players = Player.where("sex = 'F' AND name LIKE ?","%#{searchstring}%").page params[:page]
     else
       @players = Player.where("sex = 'F'").page params[:page]
     end
@@ -34,7 +37,8 @@ class PlayersController < ApplicationController
 
   def juniors
     if params[:search]
-      @players = Player.where("birthday>=1995 AND name LIKE ?","%#{params[:search]}%").page params[:page]
+      searchstring = params[:search].capitalize
+      @players = Player.where("birthday>=1995 AND name LIKE ?","%#{searchstring}%").page params[:page]
     else
       @players = Player.where("birthday>=1995").page params[:page]
     end
@@ -43,7 +47,8 @@ class PlayersController < ApplicationController
 
   def all
     if params[:search]
-      @players = Player.where("name LIKE ?","%#{params[:search]}%").page params[:page]
+      searchstring = params[:search].capitalize
+      @players = Player.where("name LIKE ?","%#{searchstring}%").page params[:page]
     else
       @players = Player.all.page params[:page]
     end
