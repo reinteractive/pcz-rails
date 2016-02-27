@@ -77,7 +77,7 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-  DATABASE_URL ="postgres://yumrrbzrpnpscd:tnAYjKLE3Az6-LzyWOZksMpRSa@ec2-54-83-198-111.compute-1.amazonaws.com:5432/dap0cehv82i9is"
 #
 production:
-  url: <%= ENV['DATABASE_URL'] %>
+  DATABASE_URL ="postgres://yumrrbzrpnpscd:tnAYjKLE3Az6-LzyWOZksMpRSa@ec2-54-83-198-111.compute-1.amazonaws.com:5432/dap0cehv82i9is"
+url: <%= ENV['DATABASE_URL'] %>
