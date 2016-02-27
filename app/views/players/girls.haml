@@ -1,38 +1,41 @@
-.row
-  =form_tag girls_players_path, :method=>'get' do
-    .medium-5.columns
-      = text_field_tag :search, params[:search]
-    .medium-1.columns.end.float-right
-      = submit_tag "Search", :name =>nil, class: 'round button tiny' 
+.ui.container
+  .ui.center.aligned.header
+    .blue.ui.buttons.medium
+      = link_to "Active Players", players_path, class:'ui blue basic button'
+      = link_to "Women", women_players_path, class:'ui blue basic button'
+      = link_to "Juniors", juniors_players_path, class:'ui blue basic button'
+      = link_to "Girls", girls_players_path, class:'ui blue button'
+      = link_to "All Players", all_players_path, class:'ui blue basic button'
 
-.row
-  %table
-    %thead
-      %tr
-        %th Fideid
-        %th Name
-        %th Rating
-        %th K
-        %th Rapid
-        %th Blitz
-        %th Birthday
-        %th Flag
-        %th
-        %th
-        %th
+  .ui.tertiary.form.segment
+    =form_tag girls_players_path, class:'ui form', :method=>'get' do
+      .field.ui.left.icon.input
+        = text_field_tag :search, params[:search]
+        %i.search.icon
+        = button_tag "Search", type:'submit', :name =>nil, class: 'ui right attached teal button' 
 
-    %tbody
-      - @players.each do |player|
+  .ui.container
+    %table.ui.celled.table
+      %thead
         %tr
-          %td= player.fideid
-          %td= player.name
-          %td= player.rating
-          %td= player.k
-          %td= player.rapid unless player.rapid <= 0
-          %td= player.blitz unless player.blitz <= 0
-          %td= player.birthday
-          %td= player.flag
-          %td= link_to 'Show', player
-          %td= link_to 'Edit', edit_player_path(player)
-          %td= link_to 'Destroy', player, :method => :delete, :data => { :confirm => 'Are you sure?' }
-  = paginate @players
+          %th FideID
+          %th Name
+          %th Title
+          %th Rating
+          %th K-Factor
+          %th Rapid
+          %th Blitz
+          %th Birthday
+
+      %tbody
+        - @players.each do |player|
+          %tr
+            %td= player.fideid
+            %td= link_to player.name, player
+            %td= player.title
+            %td= player.rating
+            %td= player.k
+            %td= player.rapid unless player.rapid <= 0
+            %td= player.blitz unless player.blitz <= 0
+            %td= player.birthday
+    = paginate @players

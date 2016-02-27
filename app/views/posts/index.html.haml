@@ -1,14 +1,23 @@
 .ui.container
-  %h1 Listing posts
+  %h3 Listing posts
 
-  .ui.segment
-  - @posts.each do |post|
-    = image_tag post.image.url(:medium)
-    = post.title
-    = post.content.html_safe
-    = link_to 'Show', post
-    = link_to 'Edit', edit_post_path(post)
-    = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .ui.container
+    .ui.relaxed.divided.items
+    - @posts.each do |tournament|
+      .item
+        .ui.medium.image
+          = image_tag post.image.url(:medium)
+        .content
+          = link_to post.title, post
+          .meta
+            %p
+              = post.created_on.to_date        
+          .ui.text.container
+            .ui.segment
+              = post.content.html_safe        
+          .extra
+            = link_to 'Edit', edit_post_path(post)
+            = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
   %br
   .ui.segment
