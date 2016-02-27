@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tournaments
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts
   resources :players do

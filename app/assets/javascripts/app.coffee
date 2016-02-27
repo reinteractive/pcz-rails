@@ -1,3 +1,3 @@
-receta = angular.module('receta',[
-])
+app = angular.module('tournamentsApp',['timer'
+]);
 
