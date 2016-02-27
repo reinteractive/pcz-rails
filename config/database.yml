@@ -79,7 +79,5 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: pcz-rails_production
-  username: pcz-rails
-  password: <%= ENV['PCZ-RAILS_DATABASE_PASSWORD'] %>
+  DATABASE_URL="postgres://yumrrbzrpnpscd:tnAYjKLE3Az6-LzyWOZksMpRSa@ec2-54-83-198-111.compute-1.amazonaws.com:5432/dap0cehv82i9is"
+  url: <%= ENV['DATABASE_URL'] %>
