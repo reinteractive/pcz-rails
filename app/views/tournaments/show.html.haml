@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @tournament.name
+%p
+  %b Venue:
+  = @tournament.venue
+%p
+  %b Registration deadline:
+  = @tournament.registration_deadline
+%p
+  %b More information:
+  = @tournament.more_information.html_safe
+
+= link_to 'Edit', edit_tournament_path(@tournament)
+\|
+= link_to 'Back', tournaments_path
