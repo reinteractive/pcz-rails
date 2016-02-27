@@ -41,7 +41,7 @@ development:
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  port: 5432
+  #port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -79,5 +79,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  DATABASE_URL ="postgres://yumrrbzrpnpscd:tnAYjKLE3Az6-LzyWOZksMpRSa@ec2-54-83-198-111.compute-1.amazonaws.com:5432/dap0cehv82i9is"
-url: <%= ENV['DATABASE_URL'] %>
+  host: ec2-54-83-198-111.compute-1.amazonaws.com
+  database: dap0cehv82i9is
+  username: yumrrbzrpnpscd
+  password: tnAYjKLE3Az6-LzyWOZksMpRSa
