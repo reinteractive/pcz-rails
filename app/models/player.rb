@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-	has_one :tournament :through => :player_contact
+	has_many :tournaments, :through => :player_contacts
 	require 'csv'
 
 	def self.import(file)
