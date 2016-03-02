@@ -12,6 +12,7 @@ gem 'kaminari'
 gem "paperclip", "~> 4.3"
 #authentication with devise
 gem 'ckeditor'
+gem 'aws-sdk'
 gem 'devise'
 gem 'html2haml'
 # Use SCSS for stylesheets
