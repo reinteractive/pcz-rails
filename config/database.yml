@@ -80,6 +80,7 @@ test:
 #
 # Heroku database config
 production:
+  adapter: postgresql
   host: ec2-54-83-198-111.compute-1.amazonaws.com
   database: dap0cehv82i9is
   username: yumrrbzrpnpscd
