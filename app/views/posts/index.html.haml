@@ -3,7 +3,7 @@
 
   .ui.container
     .ui.relaxed.divided.items
-    - @posts.each do |tournament|
+    - @posts.each do |post|
       .item
         .ui.medium.image
           = image_tag post.image.url(:small)
