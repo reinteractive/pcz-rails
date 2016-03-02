@@ -3,7 +3,7 @@
   - @tournaments.each do |tournament|
     .item
       .ui.medium.image
-        = image_tag tournament.image.url(:medium)
+        = image_tag tournament.image.url(:small)
       .content
         = link_to tournament.name, tournament
         .meta

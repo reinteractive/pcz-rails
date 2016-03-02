@@ -78,6 +78,7 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+# Heroku database config
 production:
   host: ec2-54-83-198-111.compute-1.amazonaws.com
   database: dap0cehv82i9is

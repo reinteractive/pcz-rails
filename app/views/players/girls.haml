@@ -10,9 +10,9 @@
   .ui.tertiary.form.segment
     =form_tag girls_players_path, class:'ui form', :method=>'get' do
       .field.ui.left.icon.input
-        = text_field_tag :search, params[:search]
-        %i.search.icon
-        = button_tag "Search", type:'submit', :name =>nil, class: 'ui right attached teal button' 
+        = text_field_tag :search, params[:search], placeholder: 'Search', :name =>nil
+        %button.ui.action.button.right.attached.playersearch       
+          %i.search.icon 
 
   .ui.container
     %table.ui.celled.table

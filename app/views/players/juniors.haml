@@ -1,7 +1,7 @@
 .ui.container
   .ui.center.aligned.header
     .blue.ui.buttons.medium
-      = link_to "Active Players", players_path, class:'ui basic button'
+      = link_to "Active Players", players_path, class:'ui blue basic button'
       = link_to "Women", women_players_path, class:'ui blue basic button'
       = link_to "Juniors", juniors_players_path, class:'ui blue button'
       = link_to "Girls", girls_players_path, class:'ui blue basic button'
@@ -9,10 +9,10 @@
 
   .ui.tertiary.form.segment
     =form_tag juniors_players_path, class:'ui form', :method=>'get' do
-      .field.ui.left.icon.input
-        = text_field_tag :search, params[:search]
-        %i.search.icon
-        = button_tag "Search", type:'submit', :name =>nil, class: 'ui right attached teal button' 
+      .field.ui.icon.input
+        = text_field_tag :search, params[:search], placeholder: 'Search...', :name =>nil
+        %button.ui.action.button.right.attached.playersearch       
+          %i.search.icon
 
   .ui.container
     %table.ui.celled.table

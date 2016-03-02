@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-	belongs_to :tournament
+	has_one :tournament :through => :player_contact
 	require 'csv'
 
 	def self.import(file)
@@ -15,16 +15,4 @@ class Player < ActiveRecord::Base
       end # end if !product.nil?
     end # end CSV.foreach
   end # end self.import(file)
-
-
-=begin
-  def self.search(search)
-  	  if search
-      where('name LIKE ?',"%#{search}%")
-    else
-      all
-    end
-=end
-
-  	
 end

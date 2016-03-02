@@ -259,6 +259,7 @@ DEPENDENCIES
   factory_girl_rails
   foreman
   haml-rails (~> 0.9)
+  html2haml
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

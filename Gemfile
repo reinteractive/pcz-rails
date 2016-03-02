@@ -13,6 +13,7 @@ gem "paperclip", "~> 4.3"
 #authentication with devise
 gem 'ckeditor'
 gem 'devise'
+gem 'html2haml'
 # Use SCSS for stylesheets
 gem 'therubyracer'
 gem 'less-rails-semantic_ui'
