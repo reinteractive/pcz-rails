@@ -11,7 +11,7 @@
           = link_to post.title, post
           .meta
             %p
-              = post.created_on.to_date        
+              = post.created_at.to_date        
           .ui.text.container
             .ui.segment
               = post.content.html_safe        
