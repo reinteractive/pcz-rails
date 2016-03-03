@@ -1,0 +1,22 @@
+= link_to "View basket", basket_path
+= link_to "Checkout", checkout_path
+= flash[:notice]
+.ui.container
+- if current_order
+  %p{:style => "border:1px solid black;padding:10px;"}
+    You have #{pluralize current_order.total_items, 'item'} in your basket which cost
+    \#{number_to_currency current_order.total_before_tax}.
+
+
+.ui.container
+  %h2 Products
+- @products.each do |category, products|
+  %h3= category.name
+  %ul
+    - products.each do |product|
+      %li
+        %h4= link_to product.name, product_path(product.permalink)
+        %p= product.short_description
+        %p
+          %b Price:
+          = number_to_currency product.price

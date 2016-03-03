@@ -1,0 +1,34 @@
+.ui.container
+  %table{:border => "1", :width => "100%"}
+  %thead
+    %tr
+      %td Quantity
+      %td Product
+      %td Sub-Total
+      %td Tax
+      %td Total
+  %tbody
+    - order.order_items.each do |item|
+      %tr
+        %td= item.quantity
+        %td= item.ordered_item.full_name
+        %td= number_to_currency item.sub_total
+        %td= number_to_currency item.tax_amount
+        %td= number_to_currency item.total
+    - if order.delivery_service
+      %tr
+        %td
+        %td= order.delivery_service.name
+        %td= number_to_currency order.delivery_price
+        %td= number_to_currency order.delivery_tax_amount
+        %td= number_to_currency order.delivery_price + order.delivery_tax_amount
+  %tfoot
+    %tr
+      %td{:colspan => "4"} Sub-Total
+      %td= number_to_currency order.total_before_tax
+    %tr
+      %td{:colspan => "4"} Tax
+      %td= number_to_currency order.tax
+    %tr
+      %td{:colspan => "4"} Total
+      %td= number_to_currency order.total

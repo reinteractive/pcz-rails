@@ -1,0 +1,21 @@
+%h2 Checkout
+= render 'items', :order => @order
+= form_for @order, :url => checkout_path do |f|
+  %dl
+    %dt= f.label :first_name, 'Name'
+    %dd
+      = f.text_field :first_name
+      = f.text_field :last_name
+    %dt= f.label :billing_address1, 'Address'
+    %dd= f.text_field :billing_address1
+    %dd= f.text_field :billing_address2
+    %dd= f.text_field :billing_address3
+    %dd= f.text_field :billing_address4
+    %dt= f.label :billing_postcode, 'Post code'
+    %dd= f.text_field :billing_postcode
+    %dd= f.collection_select :billing_country_id, Shoppe::Country.ordered, :id, :name, :include_blank => true
+    %dt= f.label :email_address
+    %dd= f.text_field :email_address
+    %dt= f.label :phone_number
+    %dd= f.text_field :phone_number
+    %dd= f.submit 'Continue'
