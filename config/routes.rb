@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "players/", to: "players#index"
   get "products/", to: "products#index"
   get "product/:permalink", to: "products#show", as: "product"
   post "product/:permalink", to: "products#buy", as: "buy"
@@ -29,7 +30,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'players#index'
+  root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
