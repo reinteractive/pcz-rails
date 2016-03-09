@@ -1,24 +1,23 @@
-.ui.container
-  %h3 Listing posts
-
-  .ui.container
-    .ui.relaxed.divided.items
+.ui.grid.container
+  .ui.relaxed.divided.items.two.column.row
     - @posts.each do |post|
-      .item
-        .ui.medium.image
+      .item.row
+        .ui.medium.image.column
           = image_tag post.image.url(:small)
-        .content
-          = link_to post.title, post
-          .meta
-            %p
-              = post.created_at.to_date        
+        .content.column
+        
+                
           .ui.text.container
             .ui.segment
-              = post.content.html_safe        
-          .extra
-            = link_to 'Edit', edit_post_path(post)
-            = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              = link_to post.title, post
+              = post.content.html_safe 
+              .meta
+                %p Posted On:
+                = post.created_at.to_date       
+              .extra
+                = link_to 'Edit ', edit_post_path(post)
+                = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
   %br
   .ui.segment
-  = link_to 'New Post', new_post_path
+    = link_to 'New Post', new_post_path
