@@ -9,6 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+=begin
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
@@ -17,6 +18,8 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
+=end
+
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
@@ -44,6 +47,8 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

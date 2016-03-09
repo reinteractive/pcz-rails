@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   mount Shoppe::Engine => "/shoppe"
   resources :tournaments
   mount Ckeditor::Engine => '/ckeditor'
