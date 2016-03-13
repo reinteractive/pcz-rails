@@ -59,6 +59,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
+    fideprofile = "http://ratings.fide.com/card.phtml?event="+@player.fideid.to_s
   end
 
   # GET /players/new

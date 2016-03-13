@@ -1,1 +1,2 @@
-
+$ ->
+	$('.fideprofile.ui.embed').embed()

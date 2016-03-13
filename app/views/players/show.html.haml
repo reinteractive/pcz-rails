@@ -1,27 +1,6 @@
 %p#notice= notice
+.ui.container
+  %iframe#fideprofile{:src => @player.fideprofile,:scrolling=>"no",:frameBorder=>"0"}
 
-%p
-  %b Fideid:
-  = @player.fideid
-%p
-  %b Name:
-  = @player.name
-%p
-  %b Rating:
-  = @player.rating
-%p
-  %b K-factor:
-  = @player.k
-%p
-  %b Rapid:
-  = @player.rapid
-%p
-  %b Blitz:
-  = @player.blitz
-%p
-  %b Birthday:
-  = @player.birthday
 
-= link_to 'Edit', edit_player_path(@player)
-\|
-= link_to 'Back', players_path
+

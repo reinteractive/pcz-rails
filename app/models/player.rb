@@ -13,6 +13,10 @@ class Player < ActiveRecord::Base
       else
         Player.create!(player_hash)
       end # end if !product.nil?
-    end # end CSV.foreach
-  end # end self.import(file)
+    	end # end CSV.foreach
+  	end # end self.import(file)
+
+  	def fideprofile
+  		return "http://ratings.fide.com/card.phtml?event="+self.fideid.to_s
+  	end
 end
