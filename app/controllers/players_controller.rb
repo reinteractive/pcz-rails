@@ -1,4 +1,5 @@
 class PlayersController < ApplicationController
+  before_filter :authenticate_admin!, :except =>[:show,:index,:girls,:women,:juniors,:all,:import,:search]
   before_action :set_player, only: [:show, :edit, :update, :destroy]
 
   # GET /players

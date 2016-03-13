@@ -1,19 +1,19 @@
 .ui.container
   .ui.center.aligned.header
-    .blue.ui.buttons.medium
-      = link_to "Active Players", players_path, class:'ui blue basic button'
+    .ui.buttons.medium
+      = link_to "Active Players", players_path, class:'ui button inactive-btn'
       = link_to "Women", women_players_path, class:'ui blue button'
-      = link_to "Juniors", juniors_players_path, class:'ui blue basic button'
-      = link_to "Girls", girls_players_path, class:'ui blue basic button'
-      = link_to "All Players", all_players_path, class:'ui blue basic button'
+      = link_to "Juniors", juniors_players_path, class:'ui button inactive-btn'
+      = link_to "Girls", girls_players_path, class:'ui button inactive-btn'
+      = link_to "All Players", all_players_path, class:'ui button inactive-btn'
 
   .ui.tertiary.form.segment
     =form_tag women_players_path, class:'ui form', :method=>'get' do
       .field.ui.left.icon.input
-        = text_field_tag :search, params[:search], placeholder: 'Search...', :name =>nil
+        = text_field_tag :search, params[:search], placeholder: 'Search...'
         %button.ui.action.button.right.attached.playersearch       
           %i.search.icon
-  .ui.container
+  .ui.container.ratingscontainer
     %table.ui.celled.table
       %thead
         %tr

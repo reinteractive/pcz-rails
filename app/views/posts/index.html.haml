@@ -1,19 +1,22 @@
 .ui.grid.container
-  .ui.relaxed.divided.items.two.column.row
+  -if flash[:notice]
+    .ui.message
+      %p= flash[:notice]
+
+  #postscontainer.ui.relaxed.divided.items.two.column.row
     - @posts.each do |post|
       .item.row
-        .ui.medium.image.column
-          = image_tag post.image.url(:small)
+        .ui.medium.image.bordered.column
+          = image_tag post.image.url(:small), class:'postimage'
         .content.column
-        
-                
-          .ui.text.container
+          .postcontent.ui.container
             .ui.segment
-              = link_to post.title, post
-              = post.content.html_safe 
+              %h4.ui.header
+                = link_to post.title, post
+              = truncate(post.content, :length => 300, :omission => "" , :escape => false)+'...'
               .meta
                 %p Posted On:
-                = post.created_at.to_date
+                = post.created_at.to_date.strftime('%B %d %Y')
 
               - if admin_signed_in?       
                 .extra

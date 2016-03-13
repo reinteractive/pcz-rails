@@ -13,8 +13,13 @@
     = link_to "Tournaments", tournaments_path, class: "item"
     = link_to "Shop", products_path, class: "item"
     - if admin_signed_in?
-      %p
-        = current_admin.email
-        = link_to " Sign Out", destroy_admin_session_path,:method => :delete, :data => { :confirm => 'Are you sure?' }
+      .right.menu
+        .item
+          %p Logged in as: 
+          = current_admin.email
+        .item
+          = link_to " Change Password", edit_admin_password_path
+        .item
+          = link_to " Sign Out", destroy_admin_session_path,:method => :delete, :data => { :confirm => 'Are you sure?' }        
 
   = yield

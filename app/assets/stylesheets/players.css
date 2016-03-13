@@ -5,3 +5,16 @@
 	padding-left: 50%;
 }
 
+.ratingscontainer{
+	margin-top: -1.25%;
+}
+
+.quicklink-btns{
+	
+}
+
+.inactive-btn{
+	background: #FFFFFF !important;
+	box-shadow: 0px 0px 0px 1px #2185d0 inset !important;
+	color: #2185d0 !important;
+}

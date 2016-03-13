@@ -1,29 +1,42 @@
-.ui.container
-  .ui.relaxed.divided.items
-  - @tournaments.each do |tournament|
-    .item
-      .ui.medium.image
-        = image_tag tournament.image.url(:small)
-      .content
-        = link_to tournament.name, tournament
-        .meta
-          %p
-            Date: 
-            = tournament.date        
-        .description
-          %p
-            Venue:
-            = tournament.venue        
-        .description
-          = tournament.more_information.html_safe        
-        .extra
-          %p
-            Registration Ends On:
-            = tournament.registration_deadline
-        .extra
-          = link_to 'Edit', edit_tournament_path(tournament)
-          = link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.ui.grid.container
+  #tournamentscontainer.ui.relaxed.divided.items.two.column.row
+    - @tournaments.each do |tournament|
+      .item.row
+        .ui.medium.image.bordered.column
+          = image_tag tournament.image.url(:small),class: 'postimage'
+        .content.column
+          .ui.containier.postcontent
+            .ui.segment
+              %h4.ui.header
+                = link_to tournament.name, tournament
+              .meta
+                %p
+                  %b
+                    Date: 
+                  = tournament.date        
+              .description
+                %p
+                  %b
+                    Venue:
+                  = tournament.venue        
+              .description
+                = truncate(tournament.more_information, :length => 300, :omission => "" , :escape => false)+'...'       
+              .extra
+              - if Date.current < tournament.registration_deadline
+                %p
+                  %b
+                    Registration Ends On:
+                  = tournament.registration_deadline
+              -else
+                %p.completed-tourney Registration Closed
+
+              - if admin_signed_in?
+                .extra
+                  = link_to 'Edit', edit_tournament_path(tournament)
+                  = link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Tournament', new_tournament_path
+  - if admin_signed_in?
+    %button
+      = link_to 'New Tournament', new_tournament_path

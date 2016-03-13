@@ -1,6 +1,6 @@
 .ui.container
-  %h2 Change your password
-  = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
+  %h3.ui.header Change your password
+  = form_for resource, as: resource_name, url: password_path(resource_name), html: { class: 'ui form',method: :put } do |f|
     = devise_error_messages!
     = f.hidden_field :reset_password_token
     .field
@@ -15,6 +15,7 @@
       = f.label :password_confirmation, "Confirm new password"
       %br/
       = f.password_field :password_confirmation, autocomplete: "off"
-    .actions
-      = f.submit "Change my password"
+    %button.ui.button{:type=>'submit'}
+      Change my password
+  %br
   = render "devise/shared/links"

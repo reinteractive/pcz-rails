@@ -1,4 +1,5 @@
 class TournamentsController < ApplicationController
+  before_filter :authenticate_admin!, :except =>[:show,:index]
   before_action :set_tournament, only: [:show, :edit, :update, :destroy]
 
   # GET /tournaments
