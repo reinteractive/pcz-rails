@@ -39,9 +39,9 @@ class PlayersController < ApplicationController
   def juniors
     if params[:search]
       searchstring = params[:search].capitalize
-      @players = Player.where("birthday>=1995 AND name LIKE ?","%#{searchstring}%").page params[:page]
+      @players = Player.where("birthday>=#{Date.today.strftime('%Y').to_i - 20} AND name LIKE ?","%#{searchstring}%").page params[:page]
     else
-      @players = Player.where("birthday>=1995").page params[:page]
+      @players = Player.where("birthday>=#{Date.today.strftime('%Y').to_i - 20}").page params[:page]
     end
   end  
 
@@ -59,7 +59,6 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.json
   def show
-    fideprofile = "http://ratings.fide.com/card.phtml?event="+@player.fideid.to_s
   end
 
   # GET /players/new
