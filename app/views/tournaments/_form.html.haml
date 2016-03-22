@@ -5,23 +5,23 @@
       %ul
         - @tournament.errors.full_messages.each do |msg|
           %li= msg
-
   .field
     = f.label :name
     = f.text_field :name
   .field
+    = f.label :image
     = f.file_field :image
   .field
     = f.label :venue
     = f.text_field :venue
-  .field
+  .inline.field
     = f.label :date
     = f.datetime_select :date  
-  .field
+  .inline.field
     = f.label :registration_deadline
     = f.datetime_select :registration_deadline
   .field
     = f.label :more_information
     = f.cktext_area :more_information, :class => 'ckeditor'
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save',class:'ui submit button'

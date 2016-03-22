@@ -1,6 +1,7 @@
 .ui.container
-  %h3 New tournament
+  .ui.segment
+    %h3.ui.header New tournament
 
-  = render 'form'
-
-  = link_to 'Back', tournaments_path
+    = render 'form'
+    %br
+    = link_to 'Back', tournaments_path, class:'ui button'
