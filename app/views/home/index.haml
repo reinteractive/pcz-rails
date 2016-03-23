@@ -1,0 +1,124 @@
+.ui.container
+  .ui.grid.container.segment
+    .four.wide.column.ui.relaxed.divided.items
+      .ui.segment
+        - @latest_tourneys.each do |tournament|
+          .item
+            .content
+              %h4.ui.header
+                = link_to tournament.name, tournament
+              .meta
+                %p
+                  %b
+                    Date: 
+                  = tournament.date.strftime('%A, %B %d %Y')        
+              .description
+                %p
+                  %b
+                    Venue:
+                  = tournament.venue        
+              .extra
+                - if Date.current < tournament.registration_deadline
+                  %p
+                    %b
+                      Registration Ends On:
+                    = tournament.registration_deadline.strftime('%B %d %Y, %l:%M')
+                -else
+                  %p.completed-tourney Registration Closed
+
+                - if admin_signed_in?
+                  .extra
+                    = link_to 'Edit', edit_tournament_path(tournament)
+                    = link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    .twelve.wide.column.ui.relaxed.divided.items.two.column.row
+      - @latest_posts.each do |post|
+        .item.row
+          .ui.medium.image.bordered.column
+            = image_tag post.image.url(:mini), class:'postimage'
+          .content.column
+            .postcontent.ui.container
+              .ui.segment
+                %h4.ui.header
+                  = link_to post.title, post
+                = truncate(post.content, :length => 300, :omission => "" , :escape => false)+'...'
+                .meta
+                  %p Posted On:
+                  = post.created_at.to_date.strftime('%B %d %Y')
+
+                - if admin_signed_in?       
+                  .extra
+                    = link_to 'Edit ', edit_post_path(post)
+                    = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      = link_to 'View All Posts', posts_path    
+
+  .ui.grid.container.segment
+    .four.wide.column
+      %h3.ui.header.topten Top Ten Overall
+      %table.ui.celled.table.tablet.stackable
+        %thead
+          %tr
+            %th Name
+            %th Rtg
+            %th Rapid
+            %th Blitz
+
+        %tbody
+          - @top_ten.each do |player|
+            %tr
+              %td= link_to player.name, player
+              %td= player.rating
+              %td
+                - if player.rapid <= 0
+                  = '-'
+                - else
+                  = player.rapid
+              %td
+                - if player.blitz <= 0
+                  = '-'
+                - else
+                  = player.blitz
+    
+    .four.wide.column
+      %h3.ui.header.topten Top Juniors
+      %table.ui.celled.table.tablet.stackable
+        %thead
+          %tr
+            %th Name
+            %th Rtg
+
+        %tbody
+          - @top_juniors.each do |player|
+            %tr
+              %td= link_to player.name, player
+              %td= player.rating
+
+
+    .four.wide.column
+      %h3.ui.header.topten Top Girls
+      %table.ui.celled.table.tablet.stackable
+        %thead
+          %tr
+            %th Name
+            %th Rtg
+
+        %tbody
+          - @top_girls.each do |player|
+            %tr
+              %td= link_to player.name, player
+              %td= player.rating
+
+    .four.wide.column
+      %h3.ui.header.topten Top Women
+      %table.ui.celled.table.tablet.stackable
+        %thead
+          %tr
+            %th Name
+            %th Rtg
+
+        %tbody
+          - @top_women.each do |player|
+            %tr
+              %td= link_to player.name, player
+              %td= player.rating
+

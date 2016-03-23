@@ -35,7 +35,15 @@
             %td= player.title
             %td= player.rating
             %td= player.k
-            %td= player.rapid unless player.rapid <= 0
-            %td= player.blitz unless player.blitz <= 0
+            %td
+              - if player.rapid <= 0
+                = '-'
+              - else
+                = player.rapid
+            %td
+              - if player.blitz <= 0
+                = '-'
+              - else
+                = player.blitz
             %td= player.birthday
     = paginate @players

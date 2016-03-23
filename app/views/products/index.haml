@@ -8,7 +8,7 @@
       \#{number_to_currency current_order.total_before_tax}.
 
 
-.ui.container
+.ui.container.segment
   %h2 Products
   - @products.each do |category, products|
     %h3= category.name

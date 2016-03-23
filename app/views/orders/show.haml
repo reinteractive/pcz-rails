@@ -1,3 +1,4 @@
-%h3 Your Basket
-= render 'items', :order => current_order
-%p= link_to 'Empty basket', basket_path, :method => :delete
+.ui.container.segment
+  %h3.ui.header Your Basket
+  = render 'items', :order => current_order
+  = link_to 'Empty basket', basket_path, :method => :delete, class:'ui red button'

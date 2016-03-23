@@ -1,3 +1,4 @@
-%h2 Place your order
-= render 'items', :order => current_order
-= button_to "Place order"
+.ui.container
+  %h3.ui.header Place your order
+  = render 'items', :order => current_order
+  = button_to "Place order"

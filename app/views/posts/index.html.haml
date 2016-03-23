@@ -1,7 +1,9 @@
-.ui.grid.container
+.ui.grid.container.segment.maincontent
   -if flash[:notice]
     .ui.message
       %p= flash[:notice]
+  - if admin_signed_in?
+    = link_to 'New Post', new_post_path, class:'ui green button'
 
   #postscontainer.ui.relaxed.divided.items.two.column.row
     - @posts.each do |post|
@@ -22,8 +24,3 @@
                 .extra
                   = link_to 'Edit ', edit_post_path(post)
                   = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-  %br
-  - if admin_signed_in?
-    .ui.segment
-      = link_to 'New Post', new_post_path
