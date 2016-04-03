@@ -31,6 +31,8 @@
                     = link_to 'Edit', edit_tournament_path(tournament)
                     = link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+    .ui.vertical.divider
+
     .twelve.wide.column.ui.relaxed.divided.items.two.column.row
       - @latest_posts.each do |post|
         .item.row
@@ -50,38 +52,43 @@
                   .extra
                     = link_to 'Edit ', edit_post_path(post)
                     = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-      = link_to 'View All Posts', posts_path    
+      = paginate @latest_posts
+      .ui.segment.bottom.attached
+        %h4.ui.center.aligned.header
+          = link_to 'View All Posts', posts_path    
 
-  .ui.grid.container.segment
+  .ui.grid.container.segment.stackable
     .four.wide.column
       %h3.ui.header.topten Top Ten Overall
-      %table.ui.celled.table.tablet.stackable
+      %table.ui.celled.table
         %thead
           %tr
             %th Name
             %th Rtg
-            %th Rapid
-            %th Blitz
+            -# %th Rapid
+            -# %th Blitz
 
         %tbody
           - @top_ten.each do |player|
             %tr
               %td= link_to player.name, player
               %td= player.rating
-              %td
-                - if player.rapid <= 0
-                  = '-'
-                - else
-                  = player.rapid
-              %td
-                - if player.blitz <= 0
-                  = '-'
-                - else
-                  = player.blitz
+              -# %td
+              -#   - if player.rapid <= 0
+              -#     = '-'
+              -#   - else
+              -#     = player.rapid
+              -# %td
+              -#   - if player.blitz <= 0
+              -#     = '-'
+              -#   - else
+              -#     = player.blitz
+
+    .ui.vertical.divider
     
     .four.wide.column
       %h3.ui.header.topten Top Juniors
-      %table.ui.celled.table.tablet.stackable
+      %table.ui.celled.table
         %thead
           %tr
             %th Name
@@ -93,10 +100,11 @@
               %td= link_to player.name, player
               %td= player.rating
 
+    .ui.vertical.divider
 
     .four.wide.column
       %h3.ui.header.topten Top Girls
-      %table.ui.celled.table.tablet.stackable
+      %table.ui.celled.table
         %thead
           %tr
             %th Name
@@ -108,17 +116,21 @@
               %td= link_to player.name, player
               %td= player.rating
 
+    .ui.vertical.divider
+
     .four.wide.column
       %h3.ui.header.topten Top Women
-      %table.ui.celled.table.tablet.stackable
+      %table.ui.celled.table
         %thead
           %tr
             %th Name
             %th Rtg
+
 
         %tbody
           - @top_women.each do |player|
             %tr
               %td= link_to player.name, player
               %td= player.rating
+    
 

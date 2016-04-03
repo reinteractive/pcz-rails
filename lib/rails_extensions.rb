@@ -3,6 +3,8 @@ class Date
 		years = end_date.year - year
 		months = end_date.month - month
 		days = end_date.day - day
+		hours = end_date.hour - hour
+		minutes = end_date.minutes - minutes
 		if days < 0
 			days += 30
 			months -= 1
@@ -10,6 +12,14 @@ class Date
 		if months < 0
 			months += 12
 			years -= 1
+		end		
+		if hours < 0
+			hours += 1
+			minutes -= 60
+		end		
+		if minutes < 0
+			minutes += 60
+			hours -= 1
 		end
 		{:years => years, :months => months, :days => days}
 	end

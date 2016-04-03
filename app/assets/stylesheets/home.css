@@ -1,0 +1,16 @@
+.topten{
+	text-align: center;
+}
+
+.view_posts{
+	float: center;
+}
+#navmenu,.sitename{
+	width: 100%
+}
+#navmenu, #sitename{
+	text-align: center;
+}
+#sitelogo{
+	margin-left: 35%;
+}
