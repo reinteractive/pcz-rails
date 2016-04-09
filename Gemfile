@@ -12,7 +12,7 @@ gem 'kaminari'
 gem "paperclip", "~> 4.3"
 #authentication with devise
 gem 'ckeditor'
-gem 'aws-sdk'
+gem 'aws-sdk','~> 2'
 gem 'shoppe', '~> 1.0'
 gem 'devise'
 gem 'html2haml'
@@ -22,6 +22,7 @@ gem 'therubyracer'
 gem 'less-rails-semantic_ui'
 gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
+gem 'thin'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
@@ -45,9 +46,9 @@ gem "haml-rails", "~> 0.9"
 gem "foreman"
 
 group :production, :staging do
-	gem "rails_12factor"
-	gem "rails_stdout_logging"
-	gem "rails_serve_static_assets"
+  gem "rails_12factor"
+  gem "rails_stdout_logging"
+  gem "rails_serve_static_assets"
 end
 
 # Use Unicorn as the app server

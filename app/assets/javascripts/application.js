@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.widget
+//= require z.jquery.fileupload
 //= require jquery_ujs
 //= require ckeditor/init
 //= require_tree .

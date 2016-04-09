@@ -1,4 +1,6 @@
 $ ->
 	$('.ui.sticky')
   		.sticky()
+
+ 
   	
