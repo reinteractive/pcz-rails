@@ -3,8 +3,8 @@ $ ->
     fileInput = $(elem)
     form = $(fileInput.parents('form:first'))
     submitButton = form.find('input[type="submit"]')
-    progressBar = $('<div class=\'bar\'></div>')
-    barContainer = $('<div class=\'progress\'></div>').append(progressBar)
+    progressBar = $('.bar')
+    barContainer = $('.progress').append(progressBar)
     fileInput.after barContainer
     fileInput.fileupload
       fileInput: fileInput
@@ -30,7 +30,7 @@ $ ->
         key = $(data.jqXHR.responseXML).find('Key').text()
         url = '//' + form.data('host') + '/' + key
         # create hidden field
-        input = $('<input />',
+        input = $('%input',
           type: 'hidden'
           name: fileInput.attr('name')
           value: url)
