@@ -429,7 +429,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  aws-sdk
+  aws-sdk (~> 2)
   byebug
   capybara
   ckeditor
