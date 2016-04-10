@@ -9,10 +9,10 @@ gem 'pg'
 #kaminari for pagination
 gem 'kaminari'
 #paperclip to attach media to posts
-gem "paperclip", "~> 4.3"
+gem "paperclip"
 #authentication with devise
 gem 'ckeditor'
-gem 'aws-sdk','~> 2'
+gem 'aws-sdk'
 gem 'shoppe', '~> 1.0'
 gem 'devise'
 gem 'html2haml'
