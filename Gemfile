@@ -12,6 +12,7 @@ gem 'kaminari'
 gem "paperclip"
 #authentication with devise
 gem 'ckeditor'
+gem 'thin'
 gem 'aws-sdk','~> 2'
 gem 'shoppe', '~> 1.0'
 gem 'devise'
