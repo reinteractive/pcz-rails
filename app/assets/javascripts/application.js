@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
 //= require jquery
 //= require jquery.ui.widget
 //= require z.jquery.fileupload
 //= require jquery_ujs
 //= require ckeditor/init
 //= require semantic_ui/semantic_ui
+//= require_tree .

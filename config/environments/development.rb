@@ -9,7 +9,7 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
-=begin
+
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
@@ -18,7 +18,7 @@ Rails.application.configure do
     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
-=end
+
 
 
   # Show full error reports and disable caching.
