@@ -6,7 +6,7 @@ $ ->
     progressBar = $('.bar')
     barContainer = $('.progress').append(progressBar)
     fileInput.after barContainer
-    fileInput.fileupload
+    fileInput.fileupload(
       fileInput: fileInput
       url: form.data('url')
       type: 'POST'
@@ -40,5 +40,5 @@ $ ->
         submitButton.prop 'disabled', false
         progressBar.css('background', 'red').text 'Failed'
         return
-    return
+    return)
   return
