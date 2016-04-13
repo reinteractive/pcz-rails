@@ -9,10 +9,9 @@ gem 'pg'
 #kaminari for pagination
 gem 'kaminari'
 #paperclip to attach media to posts
-gem "paperclip"
+gem "paperclip", :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 #authentication with devise
 gem 'ckeditor'
-gem 'thin'
 gem 'aws-sdk','~> 2'
 gem 'shoppe', '~> 1.0'
 gem 'devise'
@@ -40,10 +39,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem "haml-rails", "~> 0.9"
 
+gem 'thin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem "foreman"
 
 group :production, :staging do
   gem "rails_12factor"
@@ -59,6 +58,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem "foreman"
   gem 'byebug'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
