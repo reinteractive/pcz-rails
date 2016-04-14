@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
   before_filter :authenticate_admin!, :except =>[:show,:index]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+=begin
+before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
+=end
+
 
   # GET /posts
   # GET /posts.json
@@ -74,7 +77,10 @@ class PostsController < ApplicationController
       params.require(:post).permit(:title, :image, :content)
     end
 
+=begin
     def set_s3_direct_post
      @s3_direct_post = S3_BUCKET.presigned_post(key: "${filename}", success_action_status: '201', acl: 'public-read')
     end
+=end
+
 end
