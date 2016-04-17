@@ -1,7 +1,7 @@
 # config/initializers/carrierwave.rb
 
 CarrierWave.configure do |config|
-  config.fog_provider = 'fog/aws'
+  #config.fog_provider = 'fog/aws'
   config.fog_credentials = {
     # Configuration for Amazon S3 should be made available through an Environment variable.
     # For local installations, export the env variable through the shell OR
