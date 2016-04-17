@@ -444,11 +444,13 @@ DEPENDENCIES
   aws-sdk (~> 2)
   byebug
   capybara
+  carrierwave
   ckeditor
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
   factory_girl_rails
+  fog
   foreman
   haml-rails (~> 0.9)
   html2haml
@@ -456,6 +458,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   less-rails-semantic_ui
+  mini_magick
   paperclip!
   pg
   rails (= 4.2.3)

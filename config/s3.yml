@@ -1,4 +1,10 @@
-staging:
+development:
+ access_key_id: AKIAJ2XEGEYYKEUECP2Q
+ secret_access_key: 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
+ bucket: pcz-assets
+ region: us-west-2
+
+test:
  access_key_id: ENV['AWS_ACCESS_KEY_ID']
  secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
  bucket: ENV['S3_BUCKET_NAME']

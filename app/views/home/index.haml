@@ -37,7 +37,7 @@
       - @latest_posts.each do |post|
         .item.row
           .ui.medium.image.bordered.column
-            = image_tag post.image.url(:mini), class:'postimage'
+            = image_tag post.image.medium_image, class:'postimage'
           .content.column
             .postcontent.ui.container
               .ui.segment
