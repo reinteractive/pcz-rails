@@ -9,7 +9,7 @@ gem 'pg'
 #kaminari for pagination
 gem 'kaminari'
 #paperclip to attach media to posts
-gem 'fog'
+gem 'fog-aws'
 gem "mini_magick"
 gem 'carrierwave'
 gem "paperclip", :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'

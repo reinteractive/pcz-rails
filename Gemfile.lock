@@ -450,7 +450,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
-  fog
+  fog-aws
   foreman
   haml-rails (~> 0.9)
   html2haml
