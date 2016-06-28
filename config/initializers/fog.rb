@@ -12,13 +12,18 @@ CarrierWave.configure do |config|
     # $ heroku config:add S3_KEY=your_s3_access_key S3_SECRET=your_s3_secret S3_REGION=eu-west-1 S3_ASSET_URL=http://assets.example.com/ S3_BUCKET_NAME=s3_bucket/folder
 
     # Configuration for Amazon S3
+
+    #aws_access_key_id:ENV['AWS_ACCESS_KEY_ID'],
+    #aws_secret_access_key:ENV['AWS_SECRET_ACCESS_KEY'],
+
+
     provider:'AWS',
-    aws_access_key_id:ENV['AWS_ACCESS_KEY_ID'],
-    aws_secret_access_key:ENV['AWS_SECRET_ACCESS_KEY'],
+    aws_access_key_id:'AKIAJ2XEGEYYKEUECP2Q',
+    aws_secret_access_key:'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',
   }
 
   # For testing, upload files to local `tmp` folder.
-  if Rails.env.test? || Rails.env.cucumber?
+  if Rails.env.test? || Rails.env.cucumber? || Rails.env.development?
     config.storage = :file
     config.enable_processing = false
     config.root = "#{Rails.root}/tmp"

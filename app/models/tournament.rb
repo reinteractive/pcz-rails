@@ -5,6 +5,5 @@ class Tournament < ActiveRecord::Base
 	validates_presence_of :venue
 	validates_presence_of :date
 
-	has_attached_file :image, styles: { :small => "350x", :medium => "480x" }
-	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+	mount_uploader :image, ImageUploader
 end

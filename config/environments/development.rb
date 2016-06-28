@@ -10,16 +10,16 @@ Rails.application.configure do
   config.eager_load = false
 
 
-  config.paperclip_defaults = {
-  :storage => :s3,
-  :s3_region => 'us-west-2',
-  :s3_credentials => {
-    :bucket => 'pcz-assets',
-    :access_key_id => 'AKIAJ2XEGEYYKEUECP2Q',
-    :secret_access_key => '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'
-  }
+  #config.paperclip_defaults = {
+  #:storage => :s3,
+  #:s3_region => 'us-west-2',
+  #:s3_credentials => {
+  #  :bucket => 'pcz-assets',
+  #  :access_key_id => 'AKIAJ2XEGEYYKEUECP2Q',
+  #  :secret_access_key => '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'
+  #}
 
-}
+#}
 
 
 

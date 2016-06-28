@@ -1,18 +1,26 @@
-%p#notice= notice
+.ui.container.segment
+  -if flash[:notice]
+    .ui.message
+      %i.info.circle.icon
+      %p#notice= flash[:notice]
 
-%p
-  %b Name:
-  = @tournament.name
-%p
-  %b Venue:
-  = @tournament.venue
-%p
-  %b Registration deadline:
-  = @tournament.registration_deadline
-%p
-  %b More information:
-  = @tournament.more_information.html_safe
+  %h3= @tournament.name
+  %p= @tournament.venue
+  %p= @tournament.date.strftime('%A, %B %d %Y')
+  - if Date.current < @tournament.registration_deadline
+    %p
+      %b
+        Registration Ends On:
+        = @tournament.registration_deadline.strftime('%B %d %Y, %l:%M')
+  -else
+    %p.completed-tourney Registration Closed
+  .ui.segment
+    = @tournament.more_information.html_safe
 
-= link_to 'Edit', edit_tournament_path(@tournament)
-\|
-= link_to 'Back', tournaments_path
+  -if admin_signed_in?
+    = link_to 'Edit', edit_tournament_path(@tournament)
+    \|
+    = link_to 'Back', tournaments_path
+  -else
+    %i.angle.double.left.icon
+    = link_to 'Back', tournaments_path

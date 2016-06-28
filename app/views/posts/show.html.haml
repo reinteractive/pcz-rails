@@ -1,10 +1,10 @@
-.ui.container
+.ui.container.segment
   -if flash[:notice]
     .ui.message
       %i.info.circle.icon
       %p#notice= flash[:notice]
 
-  %h3
+  %h3.ui.header.centered
     = @post.title
   .ui.segment
     = @post.content.html_safe

@@ -21,9 +21,9 @@ class PlayersController < ApplicationController
   def girls
     if params[:search]
       searchstring = params[:search].capitalize
-      @players = Player.where("sex = 'F' AND birthday>=1995 AND name LIKE ?","%#{searchstring}%").page params[:page]
+      @players = Player.where("sex = 'F' AND birthday>=#{Date.today.strftime('%Y').to_i - 20} AND name LIKE ?","%#{searchstring}%").page params[:page]
     else
-      @players = Player.where("sex = 'F' AND birthday>=1995").page params[:page]
+      @players = Player.where("sex = 'F' AND birthday>=#{Date.today.strftime('%Y').to_i - 20}").page params[:page]
     end
   end
 
