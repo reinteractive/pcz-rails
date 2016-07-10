@@ -4,10 +4,11 @@
       %i.info.circle.icon
       %p#notice= flash[:notice]
 
-  %h3
-    = @post.title
-  .ui.segment
-    = @post.content.html_safe
+  .ui.contanier.segment
+    %h3
+      = @post.title
+    .postcontent
+      = @post.content.html_safe
 
   -if admin_signed_in?
     = link_to 'Edit', edit_post_path(@post)

@@ -1,6 +1,6 @@
 .ui.container
   .ui.grid.container.segment
-    .four.wide.column.ui.relaxed.divided.items
+    #homesidebar.four.wide.column.ui.relaxed.divided.items.large.screen.only
       .ui.segment
         - @latest_tourneys.each do |tournament|
           .item
@@ -31,16 +31,15 @@
                     = link_to 'Edit', edit_tournament_path(tournament)
                     = link_to 'Destroy', tournament, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-    .ui.vertical.divider
 
-    .twelve.wide.column.ui.relaxed.divided.items.two.column.row
+    .ui.relaxed.divided.items.two.column.row.twelve.wide.computer.sixteen.wide.mobile.column
       - @latest_posts.each do |post|
         .item.row
           .ui.medium.image.bordered.column
-            = image_tag post.image.url(:mini), class:'postimage'
+            = image_tag post.image.url(:small), class:'postimage'
           .content.column
             .postcontent.ui.container
-              .ui.segment
+              .ui.segment.postexerpt
                 %h4.ui.header
                   = link_to post.title, post
                 = truncate(post.content, :length => 300, :omission => "" , :escape => false)+'...'
@@ -60,7 +59,7 @@
   .ui.grid.container.segment.stackable
     .four.wide.column
       %h3.ui.header.topten Top Ten Overall
-      %table.ui.celled.table
+      %table.ui.celled.table.unstackable
         %thead
           %tr
             %th Name
@@ -88,7 +87,7 @@
     
     .four.wide.column
       %h3.ui.header.topten Top Juniors
-      %table.ui.celled.table
+      %table.ui.celled.table.unstackable
         %thead
           %tr
             %th Name
@@ -104,7 +103,7 @@
 
     .four.wide.column
       %h3.ui.header.topten Top Girls
-      %table.ui.celled.table
+      %table.ui.celled.table.unstackable
         %thead
           %tr
             %th Name
@@ -120,7 +119,7 @@
 
     .four.wide.column
       %h3.ui.header.topten Top Women
-      %table.ui.celled.table
+      %table.ui.celled.table.unstackable
         %thead
           %tr
             %th Name

@@ -1,3 +1,23 @@
+body{
+	background-image: url('bg31.jpg')!important;
+	background-repeat: repeat !important;
+}
+#mainmenu{
+	margin-bottom: 1%;
+	margin-top: -1%;
+	position: relative;
+}
+
+#homesidebar{
+	background-color: #DCDDDE;
+}
+#homesidebar .ui.segment{
+	background-color: #DCDDDE;
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: unset !important;
+}
+
 .topten{
 	text-align: center;
 }
@@ -5,6 +25,7 @@
 .view_posts{
 	float: center;
 }
+
 #navmenu,.sitename{
 	width: 100%
 }
@@ -13,4 +34,25 @@
 }
 #sitelogo{
 	margin-left: 35%;
+}
+
+.postimage{
+	margin-left: 5%;
+}
+
+.postexerpt{
+	border: 0 !important;
+	border-radius: 0 !important;
+	box-shadow: unset !important;
+}
+
+.better-active{
+	background-color: red;
+}
+
+
+@media all and (max-width: 320px){
+	.postimage{
+		margin-left: 0%;
+	}
 }

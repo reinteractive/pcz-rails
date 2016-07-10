@@ -6,12 +6,12 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag 'ckeditor/ckeditor.js'
     = csrf_meta_tags
-    = favicon_link_tag 'https://s3.amazonaws.com/pcz-assets/favicon.ico'
+    = favicon_link_tag 'favicon.ico'
   %body
   #mainmenu.ui.sticky
     .ui.menu.grid.stackable
       .item.two.wide.column
-        = link_to (image_tag 'https://s3.amazonaws.com/pcz-assets/logo1.jpg', class:'ui image'), root_path, id:'sitelogo'
+        = link_to (image_tag 'logo1.jpg', class:'ui image'), root_path, id:'sitelogo'
       #sitename.item.six.wide.column
         %h2.ui.header.sitename Project Chess Zambia
       .item.eight.wide.column

@@ -1,6 +1,7 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
     create_table :players, {:id =>false} do |t|
+      t.integer :fideid
       t.string :name
       t.string :sex
       t.string :title
@@ -13,5 +14,6 @@ class CreatePlayers < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    execute "ALTER TABLE players ADD PRIMARY KEY (fideid);"
   end
 end

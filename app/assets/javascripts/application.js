@@ -15,5 +15,4 @@
 //= require jquery.ui.widget
 //= require ckeditor/init
 //= require semantic_ui/semantic_ui
-//= require z.jquery.fileupload
 //= require_tree .
