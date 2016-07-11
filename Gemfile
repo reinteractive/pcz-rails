@@ -6,13 +6,13 @@ ruby '2.2.0'
 gem 'rails', '4.2.3'
 #postgres database because its compatible with heroku deployment
 gem 'pg'
+gem 'unicorn'
 #kaminari for pagination
 gem 'kaminari'
 #paperclip to attach media to posts
 gem "paperclip", :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
 #authentication with devise
 gem 'ckeditor'
-gem 'aws-sdk','~> 2'
 gem 'shoppe', '~> 1.0'
 gem 'devise'
 gem 'html2haml'
