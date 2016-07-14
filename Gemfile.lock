@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/mcasimir/devise-i18n-views.git
+  revision: 323418eea9216307bbbbc64164c2e197c3bfab49
+  branch: master
+  specs:
+    devise-i18n-views (0.3.7)
+
+GIT
   remote: https://github.com/thoughtbot/paperclip
   revision: 523bd46c768226893f23889079a7aa9c73b57d68
   ref: 523bd46c768226893f23889079a7aa9c73b57d68
@@ -110,7 +117,7 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    ffi (1.9.13)
+    ffi (1.9.14)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.36.0)
@@ -198,7 +205,7 @@ GEM
     fog-serverlove (0.1.2)
       fog-core
       fog-json
-    fog-softlayer (1.1.2)
+    fog-softlayer (1.1.3)
       fog-core
       fog-json
     fog-storm_on_demand (0.1.1)
@@ -262,7 +269,7 @@ GEM
       less (~> 2.6.0)
       sprockets (> 2, < 4)
       tilt
-    less-rails-semantic_ui (2.2.1.0)
+    less-rails-semantic_ui (2.2.2.0)
       less-rails (>= 2.6.0, < 2.8.0)
     libv8 (3.16.14.15)
     loofah (2.0.3)
@@ -287,7 +294,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
-    polyamorous (1.3.0)
+    polyamorous (1.3.1)
       activerecord (>= 3.0)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -445,6 +452,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  devise-i18n-views!
   factory_girl_rails
   foreman
   haml-rails (~> 0.9)
@@ -472,5 +480,8 @@ DEPENDENCIES
   unicorn
   web-console (~> 2.0)
 
+RUBY VERSION
+   ruby 2.2.0p0
+
 BUNDLED WITH
-   1.10.5
+   1.12.5
