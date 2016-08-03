@@ -5,8 +5,6 @@ ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 #postgres database because its compatible with heroku deployment
-gem 'pg'
-gem 'unicorn'
 #kaminari for pagination
 gem 'kaminari'
 #paperclip to attach media to posts
@@ -15,6 +13,7 @@ gem "paperclip", :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523b
 gem 'ckeditor'
 gem 'shoppe', '~> 1.0'
 gem 'devise'
+gem 'devise-i18n-views', github: 'mcasimir/devise-i18n-views', branch: :master
 gem 'html2haml'
 gem 'sass-rails'
 # Use SCSS for stylesheets
@@ -45,6 +44,8 @@ gem 'thin'
 # gem 'bcrypt', '~> 3.1.7'
 
 group :production, :staging do
+  gem 'pg'
+  gem 'unicorn'
   gem "rails_12factor"
   gem "rails_stdout_logging"
   gem "rails_serve_static_assets"

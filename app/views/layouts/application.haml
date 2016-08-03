@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Project Chess Zambia
+    %title Project Chess Zambia - Promoting Education Through Chess
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag 'ckeditor/ckeditor.js'
@@ -19,7 +19,6 @@
           = link_to "News", posts_path, class: "item"
           = link_to "Ratings", players_path, class: "item"
           = link_to "Tournaments", tournaments_path, class: "item"
-          = link_to "Shop", products_path, class: "item"
           - if admin_signed_in?
             .right.menu
               .item
